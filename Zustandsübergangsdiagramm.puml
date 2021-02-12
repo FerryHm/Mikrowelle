@@ -1,0 +1,19 @@
+@startuml
+[*] --> Clock
+Clock --> Timer : Timer wird eingestellt
+Clock : Zeigt Uhr an
+Clock --> Watt : Watt wird eingestellt
+Timer --> Countdown : Mikrowelle startet
+Timer : Stellt Zeit ein
+Watt --> Countdown : Mikrowelle startet
+Watt --> Timer : Timer wird eingestellt
+Watt: Stellt Watt ein
+Timer --> Watt: Watt wird eingestellt
+Countdown --> Paused : Mikrowelle pausiert
+Countdown : Zeit läuft ab
+Paused --> Countdown : Mikrowelle fährt fort
+Paused : Mikrowellenvorgang pausiert
+Countdown --> Finished : Mikrowelle fertig
+Finished --> Clock : Mikrowelle wieder auf Ursprungszustand
+Finished : Mikrowellenvorgang ist beendet
+@enduml
