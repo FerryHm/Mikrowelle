@@ -29,7 +29,7 @@ public class Mikrowelle {
                 display.setDisplayContent();
                 break;
             case "countdown":
-                display.setDisplayContent(timer.getTimeLeft());
+                display.setDisplayContent(timer.getTimeLeft() + "/" + watt);
                 break;
         }
         return display.getDisplayContent();

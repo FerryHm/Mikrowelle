@@ -45,7 +45,7 @@
                   <Accordion />
                   <TextField fx:id="displaytext" alignment="CENTER" layoutX="12.0" layoutY="34.0" prefHeight="59.0" prefWidth="142.0">
                      <font>
-                        <Font name="Courier New" size="30.0" />
+                        <Font name="Courier New" size="24.0" />
                      </font></TextField>
                   <Button layoutX="57.0" layoutY="320.0" mnemonicParsing="false" onAction="#update" text="Update">
                      <font>
