@@ -47,6 +47,11 @@
                      <font>
                         <Font name="Courier New" size="30.0" />
                      </font></TextField>
+                  <Button layoutX="57.0" layoutY="320.0" mnemonicParsing="false" onAction="#update" text="Update">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
         </items>

@@ -1,9 +1,12 @@
 package org.openjfx.backend;
 
-public class Mikrowelle implements Runnable{
+import org.openjfx.FXMLController;
+
+public class Mikrowelle {
 
     Display display = new Display();
     Timer timer = new Timer();
+    Clock clock = new Clock();
 
     private int watt = 400;
     private int seconds = 0;
@@ -16,42 +19,44 @@ public class Mikrowelle implements Runnable{
 
     private String mode = "clock";
 
-    Thread thread = new Thread();
-
     public String getMode() {
         return mode;
     }
 
-    public void run() {
-
-    }
-
-
-    public void loop() {
-
-    }
-
     public String getDisplayContent() {
+        switch (mode) {
+            case "clock":
+                display.setDisplayContent();
+                break;
+            case "countdown":
+                display.setDisplayContent(timer.getTimeLeft());
+                break;
+        }
         return display.getDisplayContent();
     }
 
     public void startTimer() {
-        if(mode == "countdown") {
-            seconds += 30;
-            timer.startTimer(timer.getTimeLeft() + 30);
-            display.setDisplayContent(Integer.toString(timer.getTimeLeft()));
-        } else if(mode == "paused") {
-            mode = "countdown";
-            timer.startTimer(timeLeftWhenPaused);
-            display.setDisplayContent(timer.getTimeLeft());
-        } else if(mode == "clock") {
-            mode = "countdown";
-            timer.startTimer(30);
-            display.setDisplayContent(Integer.toString(timer.getTimeLeft()));
-        } else if(mode == "watt" || mode == "timer") {
-            mode = "countdown";
-            timer.startTimer(seconds);
-            display.setDisplayContent(timer.getTimeLeft());
+        switch (mode) {
+            case "countdown" -> {
+                seconds += 30;
+                timer.startTimer(timer.getTimeLeft() + 30);
+                display.setDisplayContent(Integer.toString(timer.getTimeLeft()));
+            }
+            case "paused" -> {
+                mode = "countdown";
+                timer.startTimer(timeLeftWhenPaused);
+                display.setDisplayContent(timer.getTimeLeft());
+            }
+            case "clock" -> {
+                mode = "countdown";
+                timer.startTimer(30);
+                display.setDisplayContent(Integer.toString(timer.getTimeLeft()));
+            }
+            case "watt", "timer" -> {
+                mode = "countdown";
+                timer.startTimer(seconds);
+                display.setDisplayContent(timer.getTimeLeft());
+            }
         }
     }
 

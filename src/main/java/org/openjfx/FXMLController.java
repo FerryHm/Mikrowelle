@@ -24,7 +24,7 @@ public class FXMLController implements Initializable {
     Mikrowelle mikrowelle = new Mikrowelle();
 
     @FXML
-    private TextField displaytext;
+    public TextField displaytext;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -75,6 +75,10 @@ public class FXMLController implements Initializable {
 
     public void switchMode(ActionEvent actionEvent) {
         mikrowelle.switchMode();
+        displaytext.setText(mikrowelle.getDisplayContent());
+    }
+
+    public void update(ActionEvent actionEvent) {
         displaytext.setText(mikrowelle.getDisplayContent());
     }
 }
