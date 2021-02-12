@@ -1,13 +1,12 @@
-org/openjfx/MainApp.java
- org.openjfx.MainApp
-org/openjfx/backend/Clock.java
- org.openjfx.backend.Clock
-org/openjfx/backend/Timer.java
- org.openjfx.backend.Timer
-org/openjfx/backend/Display.java
- org.openjfx.backend.Display
 org/openjfx/backend/Mikrowelle.java
  org.openjfx.backend.Mikrowelle
+org/openjfx/backend/Clock.java
+ org.openjfx.backend.Clock
 org/openjfx/FXMLController.java
  org.openjfx.FXMLController
- org.openjfx.FXMLController$1
+org/openjfx/backend/Display.java
+ org.openjfx.backend.Display
+org/openjfx/backend/Timer.java
+ org.openjfx.backend.Timer
+org/openjfx/MainApp.java
+ org.openjfx.MainApp
